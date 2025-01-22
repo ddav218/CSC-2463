@@ -47,23 +47,23 @@ function draw() {
  ellipse(375,785,20);
 
  //Example 4
-fill(35,100,5);
-stroke(255);
-ellipse(780,192,215);
+ fill(35,100,5);
+ stroke(255);
+ ellipse(780,192,215);
 
-fill(255,17,0);
-beginShape();
-vertex(780,85);
-vertex(755,155);
-vertex(680,155);
-vertex(737,196);
-vertex(715,280);
-vertex(780,225);
-vertex(855,280);
-vertex(828,196);
-vertex(880,155);
-vertex(813,155);
-vertex(780,85);
-endShape(CLOSE);
+ fill(255,17,0);
+ beginShape();
+ vertex(780,85);
+ vertex(755,155);
+ vertex(680,155);
+ vertex(737,196);
+ vertex(715,280);
+ vertex(780,225);
+ vertex(855,280);
+ vertex(828,196);
+ vertex(880,155);
+ vertex(813,155);
+ vertex(780,85);
+ endShape(CLOSE);
 
 }
