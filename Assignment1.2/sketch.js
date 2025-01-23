@@ -45,7 +45,7 @@ function draw() {
  fill("black");
  rect(0,900,100,100)
 
- strokeWeight(1);
+ strokeWeight(5);
  fill(250);
  rect(900,900,100,100)
  fill(0);
@@ -56,50 +56,52 @@ function draw() {
   line(mouseX,mouseY,pmouseX,pmouseY);
   }
 
-  if(mouseX > 0 && mouseX < 100 && mouseY > 0 && mouseYY < 100 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 0 && mouseY < 100 && mouseIsPressed){
     maker = ["red"];
   }
 
-  if(mouseX > 100 && mouseX < 200 && mouseY > 100 && mouseYY < 200 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 100 && mouseY < 200 && mouseIsPressed){
     maker = ["orange"];
   }
 
-  if(mouseX > 200 && mouseX < 300 && mouseY > 200 && mouseYY < 300 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 200 && mouseY < 300 && mouseIsPressed){
     maker = ["yellow"];
   }
 
-  if(mouseX > 300 && mouseX < 400 && mouseY > 300 && mouseYY < 400 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 300 && mouseY < 400 && mouseIsPressed){
     maker = ["green"];
   }
 
-  if(mouseX > 400 && mouseX < 500 && mouseY > 400 && mouseYY < 500 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 400 && mouseY < 500 && mouseIsPressed){
     maker = ["cyan"];
   }
 
-  if(mouseX > 500 && mouseX < 600 && mouseY > 500 && mouseYY < 600 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 500 && mouseY < 600 && mouseIsPressed){
     maker = ["blue"];
   }
 
-  if(mouseX > 600 && mouseX < 700 && mouseY > 600 && mouseYY < 700 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 600 && mouseY < 700 && mouseIsPressed){
     maker = ["magenta"];
   }
 
-  if(mouseX > 700 && mouseX < 800 && mouseY > 700 && mouseYY < 800 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 700 && mouseY < 800 && mouseIsPressed){
     maker = ["brown"];
   }
 
-  if(mouseX > 800 && mouseX < 900 && mouseY > 800 && mouseYY < 900 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 800 && mouseY < 900 && mouseIsPressed){
     maker = ["white"];
   }
 
-  if(mouseX > 900 && mouseX < 1000 && mouseY > 900 && mouseYY < 1000 && mouseIsPressed){
+  if(mouseX > 0 && mouseX < 100 && mouseY > 900 && mouseY < 1000 && mouseIsPressed){
     maker = ["black"];
   }
 
-  if(mouseX > 900 && mouseX < 1000 && mouseY > 300 && mouseYY < 400 && mouseIsPressed){
-    maker = ["green"];
+  strokeWeight(50);
+  if(mouseX > 900 && mouseX < 1000 && mouseY > 900 && mouseY < 1000 && mouseIsPressed){
+    strokeWeight(50);
+    maker = [" light grey"];
+    strokeWeight(50);
+    stroke(0);
   }
-
-  strokeWeight(25);
 
 }
