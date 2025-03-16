@@ -4,7 +4,7 @@ let waterSound;
 
 function setup() {
     createCanvas(800, 800);
-    waterGun = loadImage("assets/WaterGun.png"); 
+    waterGun = loadImage("assets/waterGun.png"); 
 
     waterSound = new Tone.NoiseSynth({
         noise: {
@@ -36,7 +36,7 @@ function drawWaterStream() {
     stroke(0, 0, 255);
     strokeWeight(4);
     for (let i = 0; i < 5; i++) {
-        line(300, 215, 480 + random(-10, 10), 190 + random(-20, 20));
+        line(400, 215, 480 + random(-10, 10), 190 + random(-20, 20));
     }
     noStroke();
 }
