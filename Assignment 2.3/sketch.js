@@ -7,7 +7,6 @@ function setup() {
 }
 
 function draw() {
-    
     background(220);
     textAlign(CENTER, TOP);
     textSize(36);
@@ -52,8 +51,13 @@ function playWaterGun() {
     let filter = audioCtx.createBiquadFilter();
     filter.type = "bandpass";
     filter.frequency.setValueAtTime(1200, audioCtx.currentTime);
-    filter.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.2);
     
+    let lfo = audioCtx.createOscillator();
+    lfo.type = "sine";
+    lfo.frequency.setValueAtTime(5, audioCtx.currentTime); // LFO rate
+    lfo.connect(filter.frequency);
+    lfo.start();
+
     let gainNode = audioCtx.createGain();
     gainNode.gain.setValueAtTime(0.8, audioCtx.currentTime);
     gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
@@ -63,4 +67,6 @@ function playWaterGun() {
     gainNode.connect(audioCtx.destination);
     
     noise.start();
+    
+    setTimeout(() => lfo.stop(), 500);
 }
