@@ -54,7 +54,7 @@ function playWaterGun() {
     
     let lfo = audioCtx.createOscillator();
     lfo.type = "sine";
-    lfo.frequency.setValueAtTime(5, audioCtx.currentTime); // LFO rate
+    lfo.frequency.setValueAtTime(5, audioCtx.currentTime); 
     lfo.connect(filter.frequency);
     lfo.start();
 
