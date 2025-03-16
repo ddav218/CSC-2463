@@ -12,7 +12,7 @@ function draw() {
     textAlign(CENTER, TOP);
     textSize(36);
     fill(0);
-    text("Click the gun to splash water", 400, 75);
+    text("Click Gun to Shoot Water", 400, 75);
     image(waterGun, 100, 150, 300, 150);
     
     if (shooting) {
