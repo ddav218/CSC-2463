@@ -1,9 +1,22 @@
 let waterGun;
 let shooting = false;
+let waterSound;
 
 function setup() {
     createCanvas(800, 800);
     waterGun = loadImage("assets/waterGun.png"); 
+
+    waterSound = new Tone.NoiseSynth({
+        noise: {
+            type: "white", 
+        },
+        envelope: {
+            attack: 0.01,
+            decay: 0.1,
+            sustain: 0.2,
+            release: 0.3
+        },
+    }).toDestination();
 }
 
 function draw() {
@@ -13,7 +26,7 @@ function draw() {
     fill(0);
     text("Click Gun to Shoot Water", 400, 75);
     image(waterGun, 100, 150, 300, 150);
-    
+
     if (shooting) {
         drawWaterStream();
     }
@@ -35,38 +48,5 @@ function mousePressed() {
 }
 
 function playWaterGun() {
-    let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let bufferSize = audioCtx.sampleRate * 0.2;
-    let buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-    let output = buffer.getChannelData(0);
-    
-    for (let i = 0; i < bufferSize; i++) {
-        output[i] = (Math.random() * 2 - 1) * Math.exp(-i / bufferSize * 10);
-    }
-    
-    let noise = audioCtx.createBufferSource();
-    noise.buffer = buffer;
-    noise.loop = false;
-    
-    let filter = audioCtx.createBiquadFilter();
-    filter.type = "bandpass";
-    filter.frequency.setValueAtTime(1200, audioCtx.currentTime);
-    
-    let lfo = audioCtx.createOscillator();
-    lfo.type = "sine";
-    lfo.frequency.setValueAtTime(5, audioCtx.currentTime); 
-    lfo.connect(filter.frequency);
-    lfo.start();
-
-    let gainNode = audioCtx.createGain();
-    gainNode.gain.setValueAtTime(0.8, audioCtx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
-    
-    noise.connect(filter);
-    filter.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    
-    noise.start();
-    
-    setTimeout(() => lfo.stop(), 500);
+    waterSound.triggerAttackRelease("8n"); 
 }
