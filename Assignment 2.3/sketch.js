@@ -24,8 +24,8 @@ function draw() {
     textAlign(CENTER, TOP);
     textSize(36);
     fill(0);
-    text("Click Gun to Shoot Water", 400, 75);
-    image(waterGun, 100, 150, 300, 150);
+    text("Click Gun to Shoot Water", 400, 65);
+    image(waterGun, 100, 100, 300, 250);
 
     if (shooting) {
         drawWaterStream();
