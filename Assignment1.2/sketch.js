@@ -115,12 +115,12 @@ function draw() {
   if (mouseIsPressed) {
     stroke(maker);
     line(mouseX, mouseY, pmouseX, pmouseY);
-    sparkleSound.triggerAttackRelease("8n");  // Sparkle sound on drawing
+    sparkleSound.triggerAttackRelease("8n");  
   }
 
   if (mouseX > 0 && mouseX < 100 && mouseY > 0 && mouseY < 100 && mouseIsPressed) {
     maker = "red";
-    colorSounds["red"]();  // Play color sound on selection
+    colorSounds["red"]();  
   }
 
   if (mouseX > 0 && mouseX < 100 && mouseY > 100 && mouseY < 200 && mouseIsPressed) {

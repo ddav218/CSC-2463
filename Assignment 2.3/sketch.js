@@ -4,7 +4,7 @@ let waterSound;
 
 function setup() {
     createCanvas(800, 800);
-    waterGun = loadImage("assets/waterGun.png"); 
+    waterGun = loadImage("/assets/waterGun.png"); 
 
     waterSound = new Tone.NoiseSynth({
         noise: {
